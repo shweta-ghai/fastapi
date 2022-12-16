@@ -1,0 +1,15 @@
+name: Build and Deploy Code
+
+on: [push, pull_request]
+
+jobs:
+  job1:
+    run-on: ubantu-latest
+    steps:
+      - name: pulling git repo
+        uses: actions/checkout@v2
+      - name: say hi sghai
+        run: echo "hello sghai"
+
+        
+ 

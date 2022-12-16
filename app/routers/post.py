@@ -3,7 +3,7 @@ from pathlib import Path
 file = Path("app\models.py").resolve()
 package_root_directory = file.parents[0]
 sys.path.append(str(package_root_directory))
-print(package_root_directory)
+#print(package_root_directory)
 
 import models, Schemas
 from fastapi import FastAPI, Response, status,HTTPException,Depends,APIRouter
