@@ -18,8 +18,9 @@ class Post(Base):
     owner_id = Column(Integer, ForeignKey(
         "users.id", ondelete="CASCADE"), nullable=False)
 
-    owner = relationship("app.models.User")
-
+    #owner = relationship("app.models.User")
+    owner = relationship("User")
+    
 class User(Base):
     __tablename__ = "users"
     __table_args__ = {'extend_existing': True}
