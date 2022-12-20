@@ -9,7 +9,8 @@ sys.path.append(str(package_root_directory))
 
 # import models
 # import database
-import routers.post,routers.user,routers.auth,routers.vote
+#import routers.post,routers.user,routers.auth,routers.vote
+from .routers import post, user, auth, vote
 
 #models.Base.metadata.create_all(bind = database.engine)
 
@@ -52,10 +53,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(routers.post.router)
-app.include_router(routers.user.router)
-app.include_router(routers.auth.router)
-app.include_router(routers.vote.router)
+app.include_router(post.router)
+app.include_router(user.router)
+app.include_router(auth.router)
+app.include_router(vote.router)
 
 @app.get("/")
 async def root():
