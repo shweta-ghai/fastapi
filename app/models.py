@@ -2,7 +2,6 @@ from sqlalchemy import Boolean, Column, Integer, String,ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql.expression import text
 from sqlalchemy.sql.sqltypes import TIMESTAMP
-from sqlalchemy.orm import relationship
 
 from database import Base
 
@@ -29,7 +28,8 @@ class User(Base):
     email = Column(String,nullable = False,unique = True)
     password = Column(String,nullable = False)
     created_at = Column(TIMESTAMP(timezone= True), server_default = text('now()'),nullable= False)
-    
+    phone_number = Column(String)
+
 class Vote(Base):
     __tablename__ = "votes"
     __table_args__ = {'extend_existing': True}

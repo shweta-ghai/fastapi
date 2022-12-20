@@ -1,13 +1,8 @@
-import sys
-from pathlib import Path
+from .. import database, Schemas, models, utils, oauth2
 
-file = Path("app\models.py").resolve()
-package_root_directory = file.parents[0]
-sys.path.append(str(package_root_directory))
-
-from fastapi import FastAPI, Response, status,HTTPException,Depends,APIRouter
+from fastapi import status,HTTPException,Depends,APIRouter
 from sqlalchemy.orm import Session
-import database,Schemas,models,utils,oauth2
+
 from fastapi.security.oauth2 import OAuth2PasswordRequestForm
 
 router = APIRouter(

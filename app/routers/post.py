@@ -1,16 +1,10 @@
-import sys
-from pathlib import Path
-file = Path("app\models.py").resolve()
-package_root_directory = file.parents[0]
-sys.path.append(str(package_root_directory))
-#print(package_root_directory)
-
-import models, Schemas
 from fastapi import FastAPI, Response, status,HTTPException,Depends,APIRouter
 from sqlalchemy.orm import Session
 import database,oauth2
 from typing import List,Optional
 from sqlalchemy import func
+from .. import models, Schemas, oauth2
+
 
 router = APIRouter(
     tags = ['Posts']

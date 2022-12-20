@@ -1,14 +1,15 @@
-import sys
-from pathlib import Path
+# import sys
+# from pathlib import Path
 
-file = Path("app\models.py").resolve()
-package_root_directory = file.parents[0]
-sys.path.append(str(package_root_directory))
+# file = Path("app\models.py").resolve()
+# package_root_directory = file.parents[0]
+# sys.path.append(str(package_root_directory))
 
-import models,Schemas,utils
+# import models,Schemas,utils
 from fastapi import FastAPI, Response, status,HTTPException,Depends,APIRouter
 from sqlalchemy.orm import Session
 import database
+from .. import models, Schemas, utils
 
 router = APIRouter(
     tags = ['Users']
