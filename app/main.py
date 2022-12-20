@@ -7,11 +7,11 @@ file = Path("app\models.py").resolve()
 package_root_directory = file.parents[0]
 sys.path.append(str(package_root_directory))
 
-import models
-import database
+# import models
+# import database
 import routers.post,routers.user,routers.auth,routers.vote
 
-models.Base.metadata.create_all(bind = database.engine)
+#models.Base.metadata.create_all(bind = database.engine)
 
 app = FastAPI()
 
