@@ -1,18 +1,18 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-import sys
-from pathlib import Path
-file = Path("app\models.py").resolve()
-package_root_directory = file.parents[0]
-sys.path.append(str(package_root_directory))
+# import sys
+# from pathlib import Path
+# file = Path("app\models.py").resolve()
+# package_root_directory = file.parents[0]
+# sys.path.append(str(package_root_directory))
 
-# import models
-# import database
+from .models import Base
+from .database import engine
 #import routers.post,routers.user,routers.auth,routers.vote
 from .routers import post, user, auth, vote
 
-#models.Base.metadata.create_all(bind = database.engine)
+Base.metadata.create_all(bind = engine)
 
 app = FastAPI()
 
