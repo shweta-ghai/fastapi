@@ -60,7 +60,7 @@ app.include_router(vote.router)
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "Hello World pushing out to ubantu"}
 
 # @app.get("/sqlalchemy")
 # def test_posts(db: Session = Depends(database.get_db)):

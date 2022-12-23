@@ -4,6 +4,8 @@ services:
     build: .
     ports:
       - 8000:8000
+    # after creating the image if you want to see your code changes to be reflected in docker
+    #(Bind Mount)
     volumes:
       - ./:/usr/src/app
     # env_file:
